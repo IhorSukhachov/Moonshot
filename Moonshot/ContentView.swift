@@ -7,6 +7,19 @@
 
 import SwiftUI
 
+struct CustomText: View {
+    let text: String
+    
+    var body: some View {
+        Text(text)
+    }
+    
+    init(text: String) {
+        print("Creatin a new custom text")
+        self.text = text
+    }
+}
+
 struct ContentView: View {
     var body: some View {
 //        VStack {
@@ -27,7 +40,7 @@ struct ContentView: View {
                 ForEach(0..<100) {
                     Text("Item \($0)").font(.title)
                 }
-            }
+            }.frame(maxWidth: .infinity)
         }
     }
 }
