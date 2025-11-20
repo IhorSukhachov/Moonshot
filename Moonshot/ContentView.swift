@@ -36,7 +36,7 @@ struct ContentView: View {
 //               
 //        }
         ScrollView {
-            VStack(spacing: 10) {
+            LazyVStack(spacing: 10) {
                 ForEach(0..<100) {
                     CustomText(text: "Item \($0)").font(.title)
                 }
