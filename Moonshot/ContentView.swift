@@ -7,27 +7,29 @@
 
 import SwiftUI
 
+struct User: Codable {
+    let name: String
+    let adress: Address
+}
+
+struct Address: Codable {
+    let street: String
+    let city: String
+}
 
 struct ContentView: View {
     var body: some View {
-        NavigationStack {
-//            NavigationLink {
-//                Text("Detailed view")
-//            }
-//            label: {
-//                VStack {
-//                    Text("This is a label")
-//                    Text("This is also a lable")
-//                    Image(systemName: "star")
-//                        
-//                }.font(.largeTitle)
-//            }
-//
-            List(0..<100) {row in
-                NavigationLink("Row \(row)") {
-                    Text("Detail \(row)")
+        Button("DEcode JSON") {
+            let input = """
+                {
+                    "name" : "Taylor Swift",
+                    "adress" : {
+                            "street" : "555 Zero Street",
+                            "city" : "Nashville"
+                                }
                 }
-            } .navigationTitle("Moonshot")
+                """
+            
         }
     }
 }
