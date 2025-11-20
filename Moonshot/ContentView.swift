@@ -38,7 +38,7 @@ struct ContentView: View {
         ScrollView {
             VStack(spacing: 10) {
                 ForEach(0..<100) {
-                    Text("Item \($0)").font(.title)
+                    CustomText(text: "Item \($0)").font(.title)
                 }
             }.frame(maxWidth: .infinity)
         }
