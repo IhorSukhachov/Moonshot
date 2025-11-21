@@ -38,9 +38,9 @@ struct ContentView: View {
                     }
                 }
                 
-            }
+            }.navigationTitle("Moonshot")
             
-                }
+        }
             }
         }
     
