@@ -17,7 +17,9 @@ extension Bundle {
         }
         
         let decoder = JSONDecoder()
-        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "y-MM-dd"
+        decoder.dateDecodingStrategy = .formatted(formatter)
         //        guard let loaded = try? decoder.decode([String: Astronaut].self, from: data) else {
         //            fatalError("Failed to decode Astronaut data from \(file)")
         //        }
