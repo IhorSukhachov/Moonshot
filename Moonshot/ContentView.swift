@@ -28,10 +28,13 @@ struct ContentView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 100, height: 100)
+                                    .padding()
                                 Text(mission.displayName)
                                     .font(.headline)
+                                    .foregroundStyle(.white)
                                 Text(mission.formattedLaunchDate)
                                     .font(.caption)
+                                    .foregroundStyle(.gray)
                             }
                             .padding(.vertical)
                             .frame(maxWidth: .infinity)
@@ -43,9 +46,11 @@ struct ContentView: View {
                                 .stroke(.lightBackground)
                         )
                     }
-                }
+                }.padding([.horizontal, .bottom])
                 
             }.navigationTitle("Moonshot")
+                .background(.darkBackground)
+                .preferredColorScheme(.dark)
             
         }
             }
