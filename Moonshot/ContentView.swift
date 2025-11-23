@@ -59,6 +59,7 @@ struct GridView: View {
         var body: some View {
             List {
                 MissionList()
+                
             }
         }
     }
@@ -83,7 +84,7 @@ struct ContentView: View {
                 .preferredColorScheme(.dark)
                 .toolbar {
                     Button("Swicth View") {
-                        //
+                        isShowingGrid.toggle()
                     }
                 }
            
