@@ -7,13 +7,26 @@
 
 import SwiftUI
 
+
+struct rectDivider: View {
+    var body: some View {
+        Rectangle()
+            .frame(height: 2)
+            .foregroundStyle(.lightBackground)
+            .padding(.vertical)
+    }
+}
+
 struct MissionView: View {
     struct CrewMember {
         let role: String
         let astronaut: Astronaut
     }
+    
+    
     let mission: Mission
     let crew: [CrewMember]
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -23,21 +36,23 @@ struct MissionView: View {
                     .containerRelativeFrame(.horizontal) {width, axis in
                         width * 0.6
                     }
-                Rectangle()
-                    .frame(height: 2)
-                    .foregroundStyle(.lightBackground)
-                    .padding(.vertical)
+                Text("Launch date: \(mission.formattedLaunchDate)")
+                rectDivider()
+//                Rectangle()
+//                    .frame(height: 2)
+//                    .foregroundStyle(.lightBackground)
+//                    .padding(.vertical)
                 
                 VStack(alignment: .leading) {
-                     Text("mission highlights")
+                     Text("Mission highlights")
                         .font(.title.bold())
                         .padding(.bottom, 5)
                     Text(mission.description)
-               
-                    Rectangle()
-                        .frame(height: 2)
-                        .foregroundStyle(.lightBackground)
-                        .padding(.vertical)
+                    rectDivider()
+//                    Rectangle()
+//                        .frame(height: 2)
+//                        .foregroundStyle(.lightBackground)
+//                        .padding(.vertical)
                         
                 }
                  .padding(.horizontal)
