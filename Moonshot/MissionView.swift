@@ -33,9 +33,9 @@ struct CrewMemberView: View {
                                 .clipShape(.capsule)
                                 .overlay(
                                     Capsule().strokeBorder(.white, lineWidth: 1)
-                                 )
+                                )
                             VStack(alignment: .leading) {
-                                 Text(crewMember.astronaut.name)
+                                Text(crewMember.astronaut.name)
                                     .font(.headline)
                                     .foregroundStyle(.white)
                                 Text(crewMember.role)
@@ -72,24 +72,24 @@ struct MissionView: View {
                     }
                 Text("Launch date: \(mission.formattedLaunchDate)")
                 rectDivider()
-//                Rectangle()
-//                    .frame(height: 2)
-//                    .foregroundStyle(.lightBackground)
-//                    .padding(.vertical)
+                //                Rectangle()
+                //                    .frame(height: 2)
+                //                    .foregroundStyle(.lightBackground)
+                //                    .padding(.vertical)
                 
                 VStack(alignment: .leading) {
-                     Text("Mission highlights")
+                    Text("Mission highlights")
                         .font(.title.bold())
                         .padding(.bottom, 5)
                     Text(mission.description)
                     rectDivider()
-//                    Rectangle()
-//                        .frame(height: 2)
-//                        .foregroundStyle(.lightBackground)
-//                        .padding(.vertical)
-                        
+                    //                    Rectangle()
+                    //                        .frame(height: 2)
+                    //                        .foregroundStyle(.lightBackground)
+                    //                        .padding(.vertical)
+                    
                 }
-                 .padding(.horizontal)
+                .padding(.horizontal)
                 CrewMemberView(crew: crew)
             }
             .padding(.bottom)

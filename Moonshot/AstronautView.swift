@@ -10,7 +10,7 @@ import SwiftUI
 struct AstronautView: View {
     let astronaut: Astronaut
     
-     
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -21,7 +21,7 @@ struct AstronautView: View {
                 Text(astronaut.description)
                     .padding()
             }
-           
+            
         }
         .background(.darkBackground)
         .navigationTitle(astronaut.name)

@@ -31,4 +31,4 @@ struct Mission: Codable, Identifiable {
         launchDate?.formatted(date: .abbreviated, time: .omitted) ?? "N/A"
     }
 }
- 
+

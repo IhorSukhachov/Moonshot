@@ -55,14 +55,14 @@ struct GridView: View {
         }
     }
 }
-    struct ListView: View {
-        var body: some View {
-            List {
-                MissionList()
-                
-            }
+struct ListView: View {
+    var body: some View {
+        List {
+            MissionList()
+            
         }
     }
+}
 
 struct ContentView: View {
     @State private var isShowingGrid: Bool = false
@@ -74,11 +74,11 @@ struct ContentView: View {
             Group {
                 if isShowingGrid {
                     GridView()
-                    }
+                }
                 else {
                     ListView()
-                    }
-                    
+                }
+                
             }.navigationTitle("Moonshot")
                 .background(.darkBackground)
                 .preferredColorScheme(.dark)
@@ -87,14 +87,14 @@ struct ContentView: View {
                         isShowingGrid.toggle()
                     }
                 }
-           
-                
-            }
+            
             
         }
-            }
         
-    
+    }
+}
+
+
 
 #Preview {
     ContentView()
