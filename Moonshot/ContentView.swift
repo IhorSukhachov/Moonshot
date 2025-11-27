@@ -13,9 +13,9 @@ struct MissionList: View {
     
     var body: some View {
         ForEach(missions) { mission in
-            NavigationLink {
-                MissionView(mission: mission, astronauts: astronauts)
-            } label: {
+            NavigationLink(value: mission) {
+                //   MissionView(mission: mission, astronauts: astronauts)
+                // } label: {
                 VStack {
                     Image(mission.image)
                         .resizable()
@@ -33,6 +33,7 @@ struct MissionList: View {
                 .frame(maxWidth: .infinity)
                 .background(.lightBackground)
             }
+            
             .clipShape(.rect(cornerRadius: 10))
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
@@ -70,6 +71,8 @@ struct ContentView: View {
     
     
     var body: some View {
+        let astronauts: [String: Astronaut] = Bundle.main.decode("astronauts.json")
+        let missions: [Mission] = Bundle.main.decode("missions.json")
         NavigationStack {
             Group {
                 if isShowingGrid {
@@ -86,6 +89,8 @@ struct ContentView: View {
                     Button("Swicth View") {
                         isShowingGrid.toggle()
                     }
+                }.navigationDestination(for: Mission.self) { mission in
+                    MissionView(mission: mission, astronauts: astronauts)
                 }
             
             
